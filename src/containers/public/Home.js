@@ -5,7 +5,7 @@ const Home = () => {
 
   return (
     <div className='overflow-y-auto'>
-      <div className='h-[70px] px-[59px] '>
+      <div className='h-[70px] px-[59px] py-4'>
         <Header/>
       </div>
         <Slider/>

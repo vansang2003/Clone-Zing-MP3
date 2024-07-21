@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react'
-import { useSelector, } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { getArrSlider } from '../ultis/fn'
+import * as actions from "../store/actions"
+import { useNavigate } from 'react-router-dom'
+
 const Slider = () => {
 
     const { banner } = useSelector(state => state.app)
-    console.log(banner)
+    // console.log(banner)
+    const dispath = useDispatch()
+    const navigate = useNavigate()
 
     // ainimation for banner
     useEffect(() => {
@@ -44,6 +49,17 @@ const Slider = () => {
         }
     }, [])
 
+    const handleClickBanner = (item) => {
+        if (item?.type === 1) {
+            dispath(actions.setCurSongId(item.encodeId))
+            dispath(actions.play(true))
+        } else if (item?.type === 4) {
+            // console.log(item)
+            const albumPath = item?.link?.split('.')[0]
+            console.log( albumPath)
+            navigate(`/album${albumPath}`)
+        }
+    }
 
     return (
         <div className='w-full overflow-hidden px-[59px]'>
@@ -51,7 +67,9 @@ const Slider = () => {
                 {banner?.map((item, index) => (
                     <img
                         key={item.encodeId}
+                        alt='Banner'
                         src={item.banner}
+                        onClick={() => handleClickBanner(item)}
                         className={`slider-item flex-1 object-contain w-[30%] rounded-lg cursor-pointer ${index <= 2 ? 'block' : 'hidden'}`}
                     />
                 ))}
