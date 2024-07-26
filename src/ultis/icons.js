@@ -5,14 +5,14 @@ import { RiUserFollowLine } from "react-icons/ri";
 import { FaChartColumn } from "react-icons/fa6";
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight  } from "react-icons/hi";
 import { GoSearch } from "react-icons/go";
-import { CiHeart } from "react-icons/ci";
+import { CiHeart, CiMusicNote1 } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { IoRepeatOutline } from "react-icons/io5";
 import { PiShuffle } from "react-icons/pi";
 import { IoIosPause  } from "react-icons/io";
 import { BsPlayFill } from "react-icons/bs";
-
+import { BsDot } from "react-icons/bs";
 
 
 const icons = {
@@ -32,7 +32,9 @@ const icons = {
     MdSkipPrevious,
     PiShuffle,
     IoIosPause,
-    BsPlayFill
+    BsPlayFill,
+    CiMusicNote1,
+    BsDot
 }
 
 export default icons;
